@@ -1,7 +1,7 @@
-import { AppBody } from './app-styled-components';
+import { AppBody } from './app-styled';
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Routes } from './components/Routes/Routes';
+import { Routes } from './components/routes/Routes';
 
 function App() {
   return (
