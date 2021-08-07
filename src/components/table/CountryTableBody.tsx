@@ -1,24 +1,11 @@
 import { FC } from 'react';
 
-export const CountryTableBody: FC = () => {
+import { TableBody } from './styled/countryTableBody-styled';
+
+export const CountryTableBody: FC = (props) => {
   return (
     <>
-      <div>
-        <div>
-          <colgroup>
-            <col />
-            <col />
-            <col />
-          </colgroup>
-          <table>
-            <tbody>
-              <tr>
-                <td>yo im data</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <TableBody>{props.children}</TableBody>
     </>
   );
 };
