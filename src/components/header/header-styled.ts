@@ -13,4 +13,9 @@ export const HeaderContainer = styled.div`
 export const HeaderContent = styled.p`
   font-size: 30px;
   font-weight: 500;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 20px;
+    font-weight: 400;
+  }
 `;

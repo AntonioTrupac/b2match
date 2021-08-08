@@ -62,6 +62,10 @@ export const Details = styled.div`
   p:nth-child(1) {
     margin-top: 0;
   }
+
+  @media only screen and (max-width: 900px) {
+    margin-top: 1rem;
+  }
 `;
 
 export const Currency = styled.div`
@@ -119,6 +123,12 @@ export const BorderCountries = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    /* & > p {
+      justify-content: center;
+      align-items: center;
+    } */
   }
 `;
 
