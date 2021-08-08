@@ -42,7 +42,7 @@ export const CountryDetails: FC = () => {
   );
 
   const goBack = async () => {
-    history.goBack();
+    history.push('/countries');
   };
 
   return (
@@ -98,7 +98,10 @@ export const CountryDetails: FC = () => {
                 {data?.borders.map((borders) => {
                   const id = Math.random() * 1000;
                   return (
-                    <StyledCountriesButton key={id}>
+                    <StyledCountriesButton
+                      key={id}
+                      onClick={() => history.push(`/countries/${borders}`)}
+                    >
                       {borders}
                     </StyledCountriesButton>
                   );
