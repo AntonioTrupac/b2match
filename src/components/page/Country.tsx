@@ -18,6 +18,7 @@ export const Country: FC<CountryProps> = (props) => {
 
   const handleRowClick = () => {
     history.push(`/countries/${alpha2Code}`);
+    window.scrollTo(0, 0);
   };
 
   return (

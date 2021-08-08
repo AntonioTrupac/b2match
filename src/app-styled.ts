@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const AppBody = styled.div`
-  height: 100vh;
   padding-right: 20px;
   padding-left: 20px;
   margin-right: auto;

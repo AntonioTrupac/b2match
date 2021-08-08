@@ -17,4 +17,6 @@ export type CountryData = {
     name: string;
     symbol: string;
   }[];
+  borders: {}[];
+  nativeName: string;
 };
