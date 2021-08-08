@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ReactLoading from 'react-loading';
 
 interface IButtonProps {
   addMargin?: string;
@@ -96,7 +97,6 @@ export const FlagContainer = styled.div`
 export const Flag = styled.img`
   height: 100%;
   width: 100%;
-  border: 1px solid black;
   object-fit: cover;
 `;
 
@@ -156,4 +156,23 @@ export const StyledCountriesButton = styled.button<IButtonProps>`
   @media only screen and (max-width: 1200px) {
     margin: ${(props) => (props.addMargin ? '30px 0 5px' : props.addMargin)};
   }
+`;
+
+export const SpinnerContainer = styled.div`
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+`;
+
+export const Spinner = styled(ReactLoading)`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
+  z-index: 1;
 `;

@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { useQueryClient } from 'react-query';
 import { useHistory } from 'react-router-dom';
 import { TD, TR } from '../table/styled/countryTableBody-styled';
 

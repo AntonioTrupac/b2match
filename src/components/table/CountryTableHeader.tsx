@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { TableHeader, TH, TR } from './styled/countryTableHeader-styled';
-// import { TR } from './styled/countryTable-styled';
 
 export const CountryTableHeader: FC = () => {
   return (

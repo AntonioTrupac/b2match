@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { FC } from 'react';
 import { useQuery } from 'react-query';
 import { useHistory, useParams } from 'react-router-dom';
@@ -12,22 +11,16 @@ import {
   Details,
   Flag,
   FlagContainer,
+  Spinner,
+  SpinnerContainer,
   StyledButton,
   StyledCountriesButton,
 } from './styled/countryDetails-styled';
 import { convertPopulation } from '../utils/convertPopulation';
+import { getData } from '../service/service';
 
 type Params = {
   alpha2Code: string;
-};
-
-const fetchCountryByName = async (code: string): Promise<CountryData> => {
-  console.log('fetch country code', code);
-  const { data } = await axios.get(
-    `https://restcountries.eu/rest/v2/alpha/${code}`
-  );
-
-  return data;
 };
 
 export const CountryDetails: FC = () => {
@@ -35,7 +28,7 @@ export const CountryDetails: FC = () => {
   const { alpha2Code } = useParams<Params>();
   const { error, data, isLoading, isError } = useQuery<CountryData, Error>(
     ['countryNames', alpha2Code],
-    () => fetchCountryByName(alpha2Code),
+    () => getData.getCountryByCode(alpha2Code),
     {
       enabled: !!alpha2Code,
     }
@@ -47,8 +40,12 @@ export const CountryDetails: FC = () => {
 
   return (
     <>
-      {isError && error && <p>{error.message}</p>}
-      {isLoading && <p>Fetching data...</p>}
+      {isError && error && <div>{error.message}</div>}
+      {isLoading && (
+        <SpinnerContainer>
+          <Spinner color='black' type='spin' width='200px' height='200px' />
+        </SpinnerContainer>
+      )}
       <ButtonContainer addMargin='20px '>
         <StyledButton onClick={goBack}>go back</StyledButton>
       </ButtonContainer>
