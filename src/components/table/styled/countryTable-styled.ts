@@ -8,7 +8,14 @@ export const CountryTableContainer = styled.div`
 `;
 
 export const Table = styled.table`
-  width: 100%;
+  border: 1px solid #ccc;
   border-collapse: collapse;
-  margin: 5rem 0;
+  margin: 50px;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+
+  @media screen and (max-width: 700px) {
+    border: 0;
+  }
 `;

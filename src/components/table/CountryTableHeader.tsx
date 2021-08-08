@@ -7,11 +7,11 @@ export const CountryTableHeader: FC = () => {
     <>
       <TableHeader>
         <TR>
-          <TH>Name</TH>
-          <TH>Capital</TH>
-          <TH>Region</TH>
-          <TH>Population</TH>
-          <TH>Flag</TH>
+          <TH scope='col'>Name</TH>
+          <TH scope='col'>Capital</TH>
+          <TH scope='col'>Region</TH>
+          <TH scope='col'>Population</TH>
+          <TH scope='col'>Flag</TH>
         </TR>
       </TableHeader>
     </>

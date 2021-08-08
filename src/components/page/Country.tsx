@@ -14,10 +14,7 @@ type CountryProps = {
 
 export const Country: FC<CountryProps> = (props) => {
   const { name, capital, region, population, flag, alpha2Code } = props;
-
   const history = useHistory();
-
-  const queryClient = useQueryClient();
 
   const handleRowClick = () => {
     history.push(`/countries/${alpha2Code}`);
@@ -26,11 +23,19 @@ export const Country: FC<CountryProps> = (props) => {
   return (
     <>
       <TR onClick={handleRowClick}>
-        <TD>{name}</TD>
-        <TD>{capital === '' ? 'No capital' : capital}</TD>
-        <TD>{region === '' ? 'No region' : region}</TD>
-        <TD>{population < 1 ? 'No population' : population}</TD>
-        <TD>
+        <TD scope='row' data-label='Name'>
+          {name}
+        </TD>
+        <TD scope='row' data-label='Capital'>
+          {capital === '' ? 'No capital' : capital}
+        </TD>
+        <TD scope='row' data-label='Region'>
+          {region === '' ? 'No region' : region}
+        </TD>
+        <TD scope='row' data-label='Population'>
+          {population < 1 ? 'No population' : population}
+        </TD>
+        <TD scope='row' data-label='Flag'>
           <img src={flag} alt={name} />
         </TD>
       </TR>

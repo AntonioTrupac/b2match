@@ -12,4 +12,9 @@ export type CountryData = {
   alpha3Code: string;
   cioc: string;
   alpha2Code: string;
+  currencies: {
+    code: string;
+    name: string;
+    symbol: string;
+  }[];
 };
